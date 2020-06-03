@@ -1,0 +1,31 @@
+<div class="panel">
+    <div class="row stepHeader1"><label>Step 1: Upload a file</label></div>
+    
+    <div class="row">
+        <div class="seven columns downloadTemplateSaveMsg">
+             <span>Click'</span><a class="txtHover" href="/images/Input Template.xlsx " download="">
+                 Download template
+             </a><span>' and immediately 
+             <strong>Save</strong> the file to your desktop.</span>
+         </div>
+         
+     </div>
+     
+     <div class="row">
+         </div>
+         
+    <div class="row stepheight1">
+                 <div class="two columns"><label class="left inline labelText">Select file (5 MB max)</label></div>
+                 <div class="three columns" id="filesSelect">
+                     <form id="materialUploadForm" name="materialUpload" method="POST" class="ng-pristine ng-valid">
+                         <input type="file" id="selectVendorFile" onclick="angular.element(this).scope().clearInputFile(this)" onchange="angular.element(this).scope().readExcel(this)" name="image1" accept=".xls,.xlsx">
+                     </form>
+                 </div>											
+     </div>
+     
+     
+                              
+ </div>
+ <span><a class="sumbitClassButton" href="/images/Product_Results.xlsx " download="">
+    Submit
+</a></span>

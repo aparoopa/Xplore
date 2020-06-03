@@ -1,0 +1,21 @@
+.menuBarHeader {
+    display: inline;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 22px;
+    position: relative;
+   top:0px;
+}
+
+.menuBarHeader p{
+    text-align: center;
+}
+
+.row{
+    display: inline-flex;
+    width: 85%;
+    margin-left: 90px;
+}
+
+

@@ -1,0 +1,89 @@
+<div class="searchPanel">
+     <div class="contentRow">
+        <div class="errorText" id="errorTextID" [hidden]="isMaterialEntered">2 characters minimum</div>
+        <label class="labelLeft">Search by </label>
+        <select>
+            <option value="MatNumber" ng-selected="true" selected="selected">Material number</option>
+            <option value="GTINNumber">GTIN</option>
+        </select>
+        <input type="text"  id="txtProductID"
+            class="searchbySpace" 
+            [(ngModel)]="materialId">
+        <span class="checkboxes_container">
+            <input type="checkbox" id="ckExactMaterial" (change)="displayexactmatch($event)">
+            <label class="checkText" for="ckExactMaterial">Display only exact match for material number</label></span>
+
+        <div class="contentRow">
+            <div class="errorText" id="errorTextID" [hidden]="isMaterialDescEntered">3 characters minimum</div>
+            <label class="labelLeft" for="txtMaterialDesc">Material description </label>
+            <input type="text"
+                class="noGlass searchRowDD autocomplete prodDescTextBox"
+                id="txtMaterialDesc" 
+                [disabled]="MatDescCheckboxdisabled"
+                [(ngModel)]="materialDesc" >
+        </div>
+        <div class="contentRow">
+            <label class="left inline stepText">Customer Name </label>
+            <input type="text" id="txtShipToSP" >
+
+            <a (click)='searchCustomerLookup()' href="#">
+                <img title="" class="shiptoSearchImg has-tip tip-top">
+            </a>
+            <a (click)='searchCustomerLookup()' href="#"><label class="shiptoSearchTxt"
+                    id="shipToLookupSearchPage">Lookup</label>
+            </a>
+
+        </div>
+
+        <div id="myModal" class="modal" style="display: block;">
+            <!-- Modal -->
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span (click)='closeShipTo()' class="close">×</span>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Ship-to-Lookup</h5>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tbody>
+                            <tr style="background-color: white;">
+
+                                <td  style="width: 40%; font-size: smaller;">
+                                    <span ><b>SELECT</b></span>
+                                </td>
+
+                                <td class="tableHeadwidth2">
+                                    <span><b>(SHIP-TO ID)SHIP-TO NAME </b></span>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="tableStyle">
+                        <tbody class="tableBodyStyle">
+                           <tr *ngFor="let customer of customerlist">
+                               
+                        <td class= "tableCol1width">
+                            <input type="radio" name="shipToRadioGroup" ng-click="selectedRadioBtn($index,shipToList)"  >
+                        </td>
+             <td class= "tableCol2width" > <label class = "modalTDText" >
+                  ({{customer.ship_to_id}}){{customer.ship_to_name}}
+                 </label></td>
+                               
+
+                           </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)='DoneLookup()' class="donebutton">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentRowBottom alignRight">
+        <button (click)='searchProductInfo()' id="Search" class="redBtn">search</button>
+
+    </div>
+</div>

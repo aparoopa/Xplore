@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "minixplore"
+    }
+  },
+  "defaultProject": "minixplore",
+  "cli": {
+    "analytics": "d319c535-9515-4e0b-b0a1-69ec6ab13f36"
+  }
 }

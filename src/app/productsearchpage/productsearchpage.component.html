@@ -1,0 +1,76 @@
+<app-searchpage></app-searchpage>
+<div class="row ">
+    <div class="col-2 FiltersFrame " style="width: 16.4%;margin-left:90px">
+        <div class="twelve columns filterRefine">
+            <div class="filterRefine">
+                <h3>Refine search results</h3>
+                <ul>
+                    <!-- ngRepeat: x in filterElements -->
+                    <li ng-repeat="x in filterElements" ng-class="{'closed' : !x.toggled, 'open' : x.toggled}"
+                        class="ng-scope closed">
+                        <h4 ng-click="changeClass(x)" class="ng-binding"></h4>
+                        <ul>
+                            <!-- ngRepeat: y in x.filterCheckBoxValues -->
+                        </ul>
+                    </li><!-- end ngRepeat: x in filterElements -->
+                </ul>
+
+                <ul>
+                    <!-- ngRepeat: x in filterAvaibElements -->
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-10 resultwidth">
+
+        <div class="row">
+            <ul class="no-bullet">
+
+
+                <!-- ngRepeat: x in searchResults|filter:productFilter -->
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Search Panel div -->
+    <div class="  ProductSearchResultsPaneOuter">
+            <img class="PSRImgSize" src="assets/notavailable.png">
+        <div class="row">
+            <div class="productRight">
+                <div class="row">
+                    <span class="productCodeWOID">88tn03m</span>
+                    <a class="productCodeWODesc">Small Gloves</a>
+                </div>
+
+                <span class="attributeLabel">Vendor material #:</span>
+                <span class="attributeValue">V88tn03m</span>
+
+                <span class="attributeLabel">  Vendor name:</span>
+                <span class="attributeValue ">BOSMA INDUSTRIES</span>
+
+                <div class=" ProductSearchResultsPaneInner">
+                    <ul class="attributeValuecol1">
+                        <li><b>Packaging:</b> 1000 EA/CS</li>
+                        <li><b>Sales UOM:</b> BX</li>
+                        <li><b>Base UOM:</b>CS</li>
+                    </ul>
+                    <ul class="attributeValuecol2">
+                        <li><b>Price:</b> $6.48</li>
+                        <li><b>PriceperIOUM:</b> $0.0382</li>
+                        <li><b>Availibility:</b> Available</li>
+                    </ul>
+                    <ul class="showAltBtn">
+                        <li><button>Show Alternatives</button></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
